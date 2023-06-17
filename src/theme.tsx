@@ -1,5 +1,4 @@
-import {createTheme} from "@mui/material"
-import {Theme as MUITheme} from "@mui/material"
+import {createTheme, Theme as MUITheme} from "@mui/material/styles"
 
 // Re-declare the emotion theme to have the properties of the MaterialUiTheme
 // See: https://github.com/emotion-js/emotion/discussions/2291#discussioncomment-491185
