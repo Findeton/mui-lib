@@ -27,11 +27,19 @@ const palette = {
 const theme = createTheme({
     components: {
         MuiButton: {
+            styleOverrides: {
+                root: {
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "6px",
+                },
+            },
             variants: [
                 {
                     props: {variant: "actionbar"},
                     style: {
                         background: palette.brandColor,
+                        color: "white",
                     },
                 },
             ],
