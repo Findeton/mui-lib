@@ -1,4 +1,13 @@
-import {createTheme, Theme as MUITheme} from "@mui/material/styles"
+import React, {PropsWithChildren} from "react"
+import {
+    useTheme as muiUseTheme,
+    createTheme,
+    Theme as MUITheme,
+    ThemeProvider,
+    StyledEngineProvider,
+} from "@mui/material/styles"
+
+export const useTheme: <T = MUITheme>() => T = () => muiUseTheme()
 
 // Re-declare the emotion theme to have the properties of the MaterialUiTheme
 // See: https://github.com/emotion-js/emotion/discussions/2291#discussioncomment-491185
@@ -46,5 +55,11 @@ const theme = createTheme({
     },
     palette,
 })
+
+export const StyleEngine: React.FC<PropsWithChildren> = ({children}) => (
+    <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </StyledEngineProvider>
+)
 
 export default theme
