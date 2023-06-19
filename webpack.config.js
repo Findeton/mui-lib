@@ -35,6 +35,11 @@ module.exports = function (env, argv) {
         resolve: {
             alias: {
                 "@root": path.resolve(__dirname, "src"),
+                'react': path.resolve('./node_modules/react'),
+                'react-dom': path.resolve('./node_modules/react-dom'),
+                '@mui/material': path.resolve('./node_modules/@mui/material'),
+                '@emotion/react': path.resolve('./node_modules/@emotion/react'),
+                '@emotion/styled': path.resolve('./node_modules/@emotion/styled'),
             },
             extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
